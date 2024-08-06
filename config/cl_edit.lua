@@ -2,7 +2,6 @@ function ShowNotification(message, notifyType)
     lib.notify({
         description = message,
         type = notifyType,
-        position = 'top-right'
     })
 end
 
@@ -12,8 +11,10 @@ AddEventHandler('lunar_fishing:showNotification', ShowNotification)
 function ShowUI(text, icon)
     if icon == 0 then
         lib.showTextUI(text)
+        position = 'left-center'
     else
         lib.showTextUI(text, {
+            position = 'left-center',
             icon = icon
         })
     end
@@ -37,22 +38,6 @@ function ShowProgressBar(text, duration, canCancel, anim, prop)
         anim = anim,
         prop = prop
     })
-end
-
-function SetVehicleFuel(vehicle, fuelLevel)
-    if GetResourceState('LegacyFuel') == 'started' then
-        exports['LegacyFuel']:SetFuel(vehicle, fuelLevel)
-    elseif GetResourceState('ox_fuel') then
-        Entity(vehicle).state.fuel = fuelLevel
-    end
-end
-
-function SetVehicleOwner(plate)
-    if Framework.name == 'es_extended' then
-        -- Not implemented
-    elseif Framework.name == 'qb-core' then
-        TriggerEvent("vehiclekeys:client:SetOwner", plate)
-    end
 end
 
 local function isStarted(resourceName)

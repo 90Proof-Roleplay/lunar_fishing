@@ -130,35 +130,12 @@ Config.ped = {
         name = 'SeaTrade Corporation',
         sprite = 356,
         color = 74,
-        scale = 0.75
+        scale = 0.7
     },
 
     ---@type vector4[]
     locations = {
         vector4(-2081.3831, 2614.3223, 3.0840, 112.7910),
         vector4(-1492.3639, -939.2579, 10.2140, 144.0305)
-    }
-}
-
-Config.renting = {
-    model = `s_m_m_dockwork_01`, -- The ped model
-    account = 'money',
-    boats = {
-        { model = `speeder`, price = 500, image = 'https://i.postimg.cc/mDSqWj4P/164px-Speeder.webp' },
-        { model = `dinghy`, price = 750, image = 'https://i.postimg.cc/ZKzjZgj0/164px-Dinghy2.webp'  },
-        { model = `tug`, price = 1250, image = 'https://i.postimg.cc/jq7vpKHG/164px-Tug.webp' }
-    },
-    blip = {
-        name = 'Boat Rental',
-        sprite = 410,
-        color = 74,
-        scale = 0.75
-    },
-    returnDivider = 5, -- Players can return it and get some cash back
-    returnRadius = 30.0, -- The save radius
-
-    ---@type { coords: vector4, spawn: vector4 }[]
-    locations = {
-        { coords = vector4(-1434.4818, -1512.2745, 2.1486, 25.8666), spawn = vector4(-1494.4496, -1537.6943, 2.3942, 115.6015) }
     }
 }
